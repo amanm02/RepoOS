@@ -12,6 +12,7 @@ This file is the entry map for agents. Keep it short. Prefer links to deeper doc
 - `docs/agentops/tool-registry.md`
 - `docs/agentops/mcp-registry.md`
 - `docs/agentops/hook-registry.md`
+- `docs/agentops/github-actions-runners.md`
 - `docs/verification.md`
 
 ## Working rules
@@ -20,9 +21,13 @@ This file is the entry map for agents. Keep it short. Prefer links to deeper doc
 - Do not rely on stale chat context.
 - Prefer small, reviewable diffs.
 - Run verification before claiming completion.
-- Update docs when behavior, structure, commands, tools, hooks, MCPs, or workflows change.
+- Update docs when behavior, structure, commands, tools, hooks, MCPs, runners, or workflows change.
 - Convert repeated mistakes into tests, hooks, skills, evals, schema constraints, or documentation.
 - Keep this file map-like. Put detailed guidance in `docs/agentops/`.
+
+## Runner assumption
+
+GitHub Actions use a repository-level MacBook self-hosted runner by default with labels `self-hosted`, `macOS`, and `ARM64`. See `docs/agentops/github-actions-runners.md`.
 
 ## Source-of-truth hierarchy
 
