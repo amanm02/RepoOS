@@ -1,0 +1,22 @@
+name: Doc Drift
+description: Report outdated, duplicated, or conflicting documentation
+title: "Doc drift: "
+labels: ["documentation", "agentops"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File or section
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue
+      description: What is outdated, duplicated, unclear, or conflicting?
+    validations:
+      required: true
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Proposed replacement

@@ -1,0 +1,24 @@
+name: AgentOps
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * 1"
+
+jobs:
+  agentops:
+    # RepoOS intentionally uses a repository-level MacBook self-hosted runner.
+    # Expected labels: self-hosted, macOS, ARM64.
+    runs-on: [self-hosted, macOS, ARM64]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run AgentOps PR checks
+        run: make agentops-pr
+      - name: Run hook smoke checks
+        run: make hooks-smoke
+      - name: Run MCP smoke checks
+        run: make mcp-smoke

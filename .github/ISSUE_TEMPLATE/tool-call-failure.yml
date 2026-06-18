@@ -1,0 +1,25 @@
+name: Tool Call Problem
+description: Report wrong-tool selection, bad arguments, unclear schema, or unreliable output
+title: "Tool call: "
+labels: ["tooling", "agentops"]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool or function
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected contract
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed registry/schema update

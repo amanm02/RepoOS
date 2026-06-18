@@ -1,0 +1,39 @@
+name: AgentOps Improvement
+description: Propose a repo-operating-system improvement
+title: "AgentOps: "
+labels: ["agentops"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What repeated defect, friction, or workflow gap does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link traces, PRs, command output, or examples.
+    validations:
+      required: false
+  - type: dropdown
+    id: fix_surface
+    attributes:
+      label: Fix surface
+      options:
+        - test
+        - hook
+        - skill
+        - doc update
+        - schema change
+        - MCP change
+        - subagent update
+        - folder restructure
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: How will this improvement be verified?

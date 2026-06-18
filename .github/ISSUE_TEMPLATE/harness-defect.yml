@@ -1,0 +1,37 @@
+name: Harness Defect
+description: Report a defect in instructions, tools, hooks, MCPs, routing, or verification
+title: "Harness defect: "
+labels: ["harness", "agentops"]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Likely surface
+      options:
+        - AGENTS.md
+        - MEMORY.md
+        - hook
+        - MCP
+        - tool/function schema
+        - skill
+        - subagent
+        - eval
+        - repo structure
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Suggested validation
