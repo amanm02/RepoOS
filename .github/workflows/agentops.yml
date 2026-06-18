@@ -8,7 +8,9 @@ on:
 
 jobs:
   agentops:
-    runs-on: ubuntu-latest
+    # RepoOS intentionally uses a repository-level MacBook self-hosted runner.
+    # Expected labels: self-hosted, macOS, ARM64.
+    runs-on: [self-hosted, macOS, ARM64]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
