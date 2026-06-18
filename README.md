@@ -16,6 +16,16 @@ Operating principle:
 - GitHub Actions, issue templates, and PR checklist gates.
 - A bounded Ralph Wiggum loop protocol for safe iterative improvement.
 
+## Runner requirement
+
+RepoOS GitHub Actions are configured for a repository-level MacBook self-hosted runner with these labels:
+
+```yaml
+runs-on: [self-hosted, macOS, ARM64]
+```
+
+See `docs/agentops/github-actions-runners.md` before copying this template into a target repository. If a target repo should use GitHub-hosted runners instead, update `.github/workflows/agentops.yml` accordingly.
+
 ## Install into another repo
 
 Copy the template files into the target repository, then run:
@@ -33,6 +43,7 @@ Then customize only the project-specific documents:
 - `docs/verification.md`
 - `docs/issue-map.md`
 - `docs/specs/`
+- `docs/agentops/github-actions-runners.md` if the target repo uses different runner labels
 
 Keep `.codex/`, `.agents/skills/`, and `docs/agentops/` generic unless the target repo needs a repo-specific override.
 
